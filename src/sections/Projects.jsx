@@ -36,8 +36,8 @@ const Projects = () => {
       title: 'Portfolio Personale',
       description: 'Il mio portfolio interattivo realizzato con React e Three.js, con animazioni 3D e temi dinamici.',
       technologies: ['React', 'Vite', 'Three.js'],
-      github: 'https://github.com/tuousername/portfolio-personale',
-      demo: '#',
+      github: 'https://github.com/PatrickBre007/Portfolio-Bressan-Patrick',
+      demo: 'https://portfolio-bressan-patrick.vercel.app/',
       image: '💼'
     },
   ];
