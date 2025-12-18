@@ -1,0 +1,165 @@
+.about {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  background: transparent !important;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-skills h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.skill-bar {
+  height: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Desktop piccolo */
+@media (max-width: 1200px) {
+  .about-content {
+    gap: 3rem;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 968px) {
+  .about {
+    padding: 4rem 2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .about-skills h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile large */
+@media (max-width: 600px) {
+  .about {
+    padding: 3rem 1.5rem;
+  }
+
+  .about-content {
+    gap: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-skills h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .skills-list {
+    gap: 1.2rem;
+  }
+}
+
+/* Mobile small */
+@media (max-width: 480px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about-skills h3 {
+    font-size: 1.3rem;
+  }
+  
+  .skill-header {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile extra small */
+@media (max-width: 375px) {
+  .about-text p {
+    font-size: 0.85rem;
+  }
+  
+  .skill-header {
+    font-size: 0.85rem;
+  }
+}

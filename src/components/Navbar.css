@@ -1,0 +1,166 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-menu a {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.theme-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet */
+@media (max-width: 968px) {
+  .navbar-menu {
+    gap: 1.5rem;
+  }
+  
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile large */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-menu {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+
+  .theme-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile medium */
+@media (max-width: 600px) {
+  .navbar-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .navbar-menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .theme-switcher {
+    gap: 0.4rem;
+  }
+}
+
+/* Mobile small */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem;
+  }
+
+  .navbar-logo {
+    font-size: 1rem;
+  }
+
+  .navbar-menu {
+    gap: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .theme-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile extra small */
+@media (max-width: 375px) {
+  .navbar-menu a {
+    font-size: 0.8rem;
+  }
+  
+  .navbar-logo {
+    font-size: 0.95rem;
+  }
+  
+  .theme-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
