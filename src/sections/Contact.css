@@ -1,12 +1,16 @@
 .contact {
   min-height: 100vh;
   padding: 6rem 2rem;
+  width: 100%;
+  overflow-x: hidden;
   background: transparent !important;
 }
 
 .contact-container {
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-subtitle {
@@ -145,12 +149,14 @@
 /* Tablet */
 @media (max-width: 968px) {
   .contact {
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
   }
 
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .cv-stats {
@@ -174,7 +180,11 @@
 /* Mobile large */
 @media (max-width: 600px) {
   .contact {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
+  }
+
+  .contact-container {
+    padding: 0;
   }
 
   .contact-content {
@@ -208,11 +218,19 @@
 /* Mobile small */
 @media (max-width: 480px) {
   .contact {
-    padding: 2rem 1rem;
+    padding: 2rem 0.75rem;
+  }
+
+  .contact-container {
+    padding: 0 0.25rem;
+  }
+
+  .contact-content {
+    gap: 1.5rem;
   }
 
   .contact-item {
-    padding: 1.2rem;
+    padding: 1.2rem 1rem;
     gap: 1rem;
   }
   
@@ -262,8 +280,16 @@
 
 /* Mobile extra small */
 @media (max-width: 375px) {
+  .contact {
+    padding: 1.75rem 0.5rem;
+  }
+
+  .contact-container {
+    padding: 0 0.25rem;
+  }
+
   .contact-item {
-    padding: 1rem;
+    padding: 1rem 0.875rem;
     flex-direction: column;
     text-align: center;
   }

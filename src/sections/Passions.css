@@ -1,12 +1,16 @@
 .passions {
   min-height: 100vh;
   padding: 6rem 2rem;
+  width: 100%;
+  overflow-x: hidden;
   background: transparent !important;
 }
 
 .passions-container {
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .passions-subtitle {
@@ -94,12 +98,14 @@
 /* Tablet */
 @media (max-width: 968px) {
   .passions {
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
   }
 
   .passions-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .passion-card {
@@ -118,11 +124,15 @@
 /* Mobile large */
 @media (max-width: 600px) {
   .passions {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
+  }
+
+  .passions-container {
+    padding: 0;
   }
 
   .passion-card {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
   }
   
   .passion-card h3 {
@@ -141,11 +151,19 @@
 /* Mobile small */
 @media (max-width: 480px) {
   .passions {
-    padding: 2rem 1rem;
+    padding: 2rem 0.75rem;
+  }
+
+  .passions-container {
+    padding: 0 0.25rem;
+  }
+
+  .passions-grid {
+    gap: 1.5rem;
   }
 
   .passion-card {
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem;
   }
 
   .passion-icon {
@@ -174,6 +192,18 @@
 
 /* Mobile extra small */
 @media (max-width: 375px) {
+  .passions {
+    padding: 1.75rem 0.5rem;
+  }
+
+  .passions-container {
+    padding: 0 0.25rem;
+  }
+
+  .passion-card {
+    padding: 1.25rem 1rem;
+  }
+
   .passion-icon {
     font-size: 3rem;
   }

@@ -1,12 +1,16 @@
 .projects {
   min-height: 100vh;
   padding: 6rem 2rem;
+  width: 100%;
+  overflow-x: hidden;
   background: transparent !important;
 }
 
 .projects-container {
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .projects-subtitle {
@@ -20,6 +24,8 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
   margin-bottom: 4rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .project-card {
@@ -113,12 +119,14 @@
 /* Tablet */
 @media (max-width: 968px) {
   .projects {
-    padding: 4rem 2rem;
+    padding: 4rem 1.5rem;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto 4rem;
   }
   
   .projects-subtitle {
@@ -129,11 +137,20 @@
 /* Mobile large */
 @media (max-width: 768px) {
   .projects {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
+  }
+
+  .projects-container {
+    padding: 0 0.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-card {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+    margin: 0;
   }
   
   .project-card h3 {
@@ -147,9 +164,26 @@
 
 /* Mobile medium */
 @media (max-width: 600px) {
+  .projects {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .projects-container {
+    padding: 0 0.25rem;
+  }
+
   .projects-subtitle {
     font-size: 1rem;
     margin-bottom: 3rem;
+    padding: 0;
+  }
+
+  .projects-grid {
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    padding: 1.75rem 1.25rem;
   }
   
   .project-card p {
@@ -174,11 +208,19 @@
 /* Mobile small */
 @media (max-width: 480px) {
   .projects {
-    padding: 2rem 1rem;
+    padding: 2rem 0.5rem;
+  }
+
+  .projects-container {
+    padding: 0 0.25rem;
+  }
+
+  .projects-grid {
+    gap: 1.25rem;
   }
 
   .project-card {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
   }
   
   .project-card h3 {
@@ -197,11 +239,32 @@
 
 /* Mobile extra small */
 @media (max-width: 375px) {
+  .projects {
+    padding: 1.75rem 0.5rem;
+  }
+
+  .projects-container {
+    padding: 0 0.25rem;
+  }
+
+  .project-card {
+    padding: 1.25rem 0.875rem;
+  }
+
   .project-card h3 {
     font-size: 1.3rem;
   }
   
   .project-card p {
     font-size: 0.9rem;
+  }
+
+  .project-icon {
+    font-size: 2.75rem;
+  }
+
+  .github-button {
+    padding: 1rem 1.75rem;
+    font-size: 0.95rem;
   }
 }

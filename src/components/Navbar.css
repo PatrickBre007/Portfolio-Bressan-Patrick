@@ -19,6 +19,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .navbar-logo {
@@ -108,9 +110,14 @@
 
 /* Mobile medium */
 @media (max-width: 600px) {
+  .navbar {
+    padding: 1rem 0.5rem;
+  }
+
   .navbar-container {
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0;
   }
   
   .navbar-menu {
@@ -129,7 +136,11 @@
 /* Mobile small */
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.8rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .navbar-container {
+    padding: 0 0.25rem;
   }
 
   .navbar-logo {
