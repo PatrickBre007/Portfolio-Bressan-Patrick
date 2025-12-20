@@ -38,10 +38,9 @@ const Contact = () => {
   ];
 
   const handleDownloadCV = () => {
-    // Creeremo un CV placeholder
     const link = document.createElement('a');
-    link.href = '/cv/Patrick_Bressan_CV.docx.pdf';
-    link.download = 'Patrick_Bressan_CV.pdf';
+    link.href = '/cv/CV PATRICK BRESSAN.pdf';
+    link.download = 'CV_Patrick_Bressan.pdf';
     link.click();
   };
 
