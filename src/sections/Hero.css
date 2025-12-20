@@ -33,8 +33,17 @@
 
 .hero-subtitle {
   font-size: 1.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.hero-description {
+  font-size: 1.2rem;
   margin-bottom: 2.5rem;
   line-height: 1.6;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
 .hero-buttons {
@@ -151,7 +160,8 @@
 
 /* Tablet portrait */
 @media (max-width: 968px) {
-  .hero {\n    padding: 2rem 1.5rem;
+  .hero {
+    padding: 2rem 1.5rem;
   }
 
   .hero-container {

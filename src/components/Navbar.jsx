@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 import './Navbar.css';
 
 const Navbar = () => {
   const { theme, currentTheme, changeTheme } = useTheme();
+  const { currentLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+
+  const t = translations[currentLanguage]?.navbar || translations.it.navbar;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,38 +49,41 @@ const Navbar = () => {
 
         <div className="navbar-menu">
           <a onClick={() => scrollToSection('about')} style={{ color: theme.text }}>
-            Chi Sono
+            {t.about}
           </a>
           <a onClick={() => scrollToSection('projects')} style={{ color: theme.text }}>
-            Progetti
+            {t.projects}
           </a>
           <a onClick={() => scrollToSection('passions')} style={{ color: theme.text }}>
-            Passioni
+            {t.passions}
           </a>
           <a onClick={() => scrollToSection('contact')} style={{ color: theme.text }}>
-            Contatti
+            {t.contact}
           </a>
         </div>
 
-        <div className="theme-switcher">
-          {Object.keys({ coding: 1, videogame: 1, pallavolo: 1 }).map((themeName) => (
-            <motion.button
-              key={themeName}
-              onClick={() => changeTheme(themeName)}
-              className={`theme-btn ${currentTheme === themeName ? 'active' : ''}`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              style={{
-                background: currentTheme === themeName ? theme.primary : 'transparent',
-                border: `2px solid ${theme.primary}`,
-                color: currentTheme === themeName ? theme.background : theme.text,
-              }}
-            >
-              {themeName === 'coding' && '💻'}
-              {themeName === 'videogame' && '🎮'}
-              {themeName === 'pallavolo' && '🏐'}
-            </motion.button>
-          ))}
+        <div className="navbar-controls">
+          {/* Theme Switcher */}
+          <div className="theme-switcher">
+            {Object.keys({ coding: 1, videogame: 1, pallavolo: 1 }).map((themeName) => (
+              <motion.button
+                key={themeName}
+                onClick={() => changeTheme(themeName)}
+                className={`theme-btn ${currentTheme === themeName ? 'active' : ''}`}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                style={{
+                  background: currentTheme === themeName ? theme.primary : 'transparent',
+                  border: `2px solid ${theme.primary}`,
+                  color: currentTheme === themeName ? theme.background : theme.text,
+                }}
+              >
+                {themeName === 'coding' && '💻'}
+                {themeName === 'videogame' && '🎮'}
+                {themeName === 'pallavolo' && '🏐'}
+              </motion.button>
+            ))}
+          </div>
         </div>
       </div>
     </motion.nav>

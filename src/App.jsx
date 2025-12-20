@@ -1,4 +1,5 @@
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
@@ -8,10 +9,16 @@ import Projects from './sections/Projects';
 import Passions from './sections/Passions';
 import Contact from './sections/Contact';
 import ThreeBackground from './components/ThreeBackground';
+import LanguageSelector from './components/LanguageSelector';
 import './App.css';
 
 function AppContent() {
   const { currentTheme } = useTheme();
+
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Cambia l'icona del sito in base al tema
   useEffect(() => {
@@ -32,6 +39,7 @@ function AppContent() {
     <div className="App">
       <ThreeBackground theme={currentTheme} />
       <Navbar />
+      <LanguageSelector />
       <Hero />
       <About />
       <ImageCarousel />
@@ -45,7 +53,9 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

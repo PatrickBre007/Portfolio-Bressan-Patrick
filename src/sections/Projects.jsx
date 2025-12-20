@@ -1,40 +1,44 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 import './Projects.css';
 
 const Projects = () => {
   const { theme } = useTheme();
+  const { currentLanguage } = useLanguage();
+  const t = translations[currentLanguage].projects;
 
   // Array di progetti - puoi personalizzarlo con i tuoi veri progetti
   const projects = [
     {
-      title: 'Portfolio Per un Radiomatore',
-      description: 'Portfolio interattivo con, Vite, React e temi dinamici. Presenta progetti, competenze e passioni in modo coinvolgente.',
+      title: t.project1.title,
+      description: t.project1.description,
       technologies: ['React', 'Vite', 'Three.js',],
       github: 'https://github.com/PatrickBre007/IV3OSC',
       demo: 'https://iv3osc.vercel.app/',
       image: '📡'
     },
     {
-      title: 'PetApp ',
-      description: 'WebApp con gestione animali domestici, veterinari e appuntamenti.',
+      title: t.project2.title,
+      description: t.project2.description,
       technologies: ['React', 'C#', 'SQL', 'API'],
       github: 'https://github.com/PatrickBre007/PetApp',
       demo: 'https://pet-app-alpha-six.vercel.app/',
       image: '🐾'
     },
     {
-      title: 'Sito di Pulizie',
-      description: 'Sito web professionale per azienda di pulizie con preventivi e servizi personalizzati.',
+      title: t.project3.title,
+      description: t.project3.description,
       technologies: ['React', 'Vite', 'Three.js'],
       github: 'https://github.com/PatrickBre007/Bix-pulito-pro',
       demo: 'https://bix-pulito-pro.vercel.app/',
       image: '🫧'
     },
     {
-      title: 'BiteMe',
-      description: 'Sito web moderno per azienda di hamburger con menu interattivo, sistema di ordinazione e design accattivante.',
+      title: t.project4.title,
+      description: t.project4.description,
       technologies: ['React', 'Vite', 'Three.js'],
       github: 'https://github.com/PatrickBre007/Bite-Me',
       demo: 'https://biteme-jade.vercel.app/',
@@ -52,7 +56,7 @@ const Projects = () => {
           viewport={{ once: true }}
           style={{ color: theme.primary }}
         >
-          I Miei Progetti
+          {t.title}
         </motion.h2>
 
         <motion.p
@@ -62,7 +66,7 @@ const Projects = () => {
           viewport={{ once: true }}
           style={{ color: theme.textSecondary }}
         >
-          Ecco alcuni dei progetti su cui ho lavorato
+          {t.subtitle}
         </motion.p>
 
         <div className="projects-grid">
@@ -116,7 +120,7 @@ const Projects = () => {
                     color: theme.background,
                   }}
                 >
-                  <FaGithub /> GitHub
+                  <FaGithub /> {t.viewCode}
                 </motion.a>
                 <motion.a
                   href={project.demo}
@@ -130,7 +134,7 @@ const Projects = () => {
                     color: theme.primary,
                   }}
                 >
-                  <FaExternalLinkAlt /> Demo
+                  <FaExternalLinkAlt /> {t.viewDemo}
                 </motion.a>
               </div>
             </motion.div>

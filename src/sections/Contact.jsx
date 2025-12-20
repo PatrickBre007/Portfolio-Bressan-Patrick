@@ -1,21 +1,25 @@
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPhone, FaDownload } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 import './Contact.css';
 
 const Contact = () => {
   const { theme } = useTheme();
+  const { currentLanguage } = useLanguage();
+  const t = translations[currentLanguage].contact;
 
   const contactInfo = [
     {
       icon: <FaEnvelope />,
-      label: 'Email',
+      label: t.email,
       value: 'patrick.bressan00@gmail.com',
       link: 'mailto:patrick.bressan00@gmail.com'
     },
     {
       icon: <FaPhone />,
-      label: 'Telefono',
+      label: t.phone,
       value: '+39 392 055 7793',
       link: 'tel:+393920557793'
     },
@@ -51,7 +55,7 @@ const Contact = () => {
           viewport={{ once: true }}
           style={{ color: theme.primary }}
         >
-          Contattami
+          {t.title}
         </motion.h2>
 
         <motion.p
@@ -61,7 +65,7 @@ const Contact = () => {
           viewport={{ once: true }}
           style={{ color: theme.text }}
         >
-          Interessato a collaborare? Sono sempre aperto a nuove opportunità!
+          {t.subtitle}
         </motion.p>
 
         <div className="contact-content">
@@ -121,10 +125,9 @@ const Contact = () => {
               border: `2px solid ${theme.primary}`,
             }}
           >
-            <h3 style={{ color: theme.primary }}>Scarica il mio CV</h3>
+            <h3 style={{ color: theme.primary }}>{t.downloadCV}</h3>
             <p style={{ color: theme.textSecondary }}>
-              Vuoi saperne di più sul mio background e le mie esperienze?
-              Scarica il mio curriculum vitae!
+              {t.subtitle}
             </p>
 
             <motion.button
@@ -138,7 +141,7 @@ const Contact = () => {
               }}
             >
               <FaDownload />
-              Scarica CV
+              {t.downloadCV}
             </motion.button>
 
             <div className="cv-stats">

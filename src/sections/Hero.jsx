@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 import './Hero.css';
 
 const Hero = () => {
   const { theme } = useTheme();
+  const { currentLanguage } = useLanguage();
+  const t = translations[currentLanguage].hero;
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   // Array delle tue foto - metti i nomi delle foto che caricherai in /public/photos
@@ -40,7 +44,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Ciao, sono{' '}
+            {t.greeting}{' '}
             <span style={{ color: theme.primary }}>Patrick Bressan</span>
           </motion.h1>
 
@@ -51,7 +55,17 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            Full Stack Developer | Appassionato di tecnologia, videogiochi e sport
+            {t.subtitle}
+          </motion.p>
+
+          <motion.p
+            className="hero-description"
+            style={{ color: theme.text }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            {t.description}
           </motion.p>
 
           <motion.div
@@ -70,7 +84,7 @@ const Hero = () => {
               }}
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Vedi i Progetti
+              {t.viewWork}
             </motion.button>
 
             <motion.button
@@ -83,7 +97,7 @@ const Hero = () => {
               }}
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              Contattami
+              {t.downloadCV}
             </motion.button>
           </motion.div>
         </motion.div>

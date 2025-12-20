@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 9999;
   padding: 1.5rem 2rem;
   transition: all 0.3s ease;
 }
@@ -61,6 +61,76 @@
 .theme-switcher {
   display: flex;
   gap: 0.5rem;
+}
+
+.navbar-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.language-selector {
+  position: relative;
+  z-index: 10000;
+}
+
+.language-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10000;
+  pointer-events: all;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 150px;
+  border-radius: 12px;
+  overflow: visible;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 10001;
+  pointer-events: all;
+}
+
+.language-option {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  pointer-events: all;
+  position: relative;
+  z-index: 10002;
+}
+
+.language-option:hover {
+  opacity: 0.8;
+}
+
+.language-option .flag {
+  font-size: 1.2rem;
+}
+
+.language-option .lang-name {
+  font-weight: 500;
+}
+
+.language-option.active {
+  font-weight: 700;
 }
 
 .theme-btn {
@@ -127,9 +197,26 @@
     margin-top: 1rem;
     gap: 1.5rem;
   }
+
+  .navbar-controls {
+    gap: 0.5rem;
+  }
   
   .theme-switcher {
     gap: 0.4rem;
+  }
+
+  .language-btn,
+  .theme-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .language-dropdown {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -152,10 +239,24 @@
     font-size: 0.85rem;
   }
 
+  .language-btn,
   .theme-btn {
     width: 35px;
     height: 35px;
     font-size: 1rem;
+  }
+
+  .language-dropdown {
+    min-width: 130px;
+  }
+
+  .language-option {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .language-option .lang-name {
+    display: none;
   }
 }
 
@@ -169,9 +270,14 @@
     font-size: 0.95rem;
   }
   
+  .language-btn,
   .theme-btn {
     width: 32px;
     height: 32px;
     font-size: 0.9rem;
+  }
+
+  .language-dropdown {
+    min-width: 100px;
   }
 }

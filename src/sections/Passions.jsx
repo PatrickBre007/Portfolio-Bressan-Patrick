@@ -1,46 +1,35 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 import './Passions.css';
 
 const Passions = () => {
   const { theme, changeTheme, currentTheme } = useTheme();
+  const { currentLanguage } = useLanguage();
+  const t = translations[currentLanguage].passions;
 
   const passions = [
     {
       id: 'coding',
-      title: 'Coding',
+      title: t.coding.title,
       icon: '💻',
-      description: 'Il coding è la mia passione principale. Amo creare soluzioni innovative e risolvere problemi complessi attraverso il codice.',
-      highlights: [
-        'Sviluppo Web Full Stack',
-        'Architettura Software',
-        'Clean Code & Best Practices',
-        'Continuo apprendimento'
-      ]
+      description: t.coding.description,
+      highlights: t.coding.highlights
     },
     {
       id: 'videogame',
-      title: 'Videogiochi',
+      title: t.videogame.title,
       icon: '🎮',
-      description: 'I videogiochi sono per me fonte di ispirazione. Mi affascinano la game design, la narrativa interattiva e le meccaniche di gioco.',
-      highlights: [
-        'Game Design Analysis',
-        'Competitive Gaming',
-        'Storytelling Interattivo',
-        'Community Building'
-      ]
+      description: t.videogame.description,
+      highlights: t.videogame.highlights
     },
     {
       id: 'pallavolo',
-      title: 'Pallavolo',
+      title: t.pallavolo.title,
       icon: '🏐',
-      description: 'La pallavolo mi ha insegnato il valore del lavoro di squadra, della comunicazione e della determinazione nel raggiungere obiettivi comuni.',
-      highlights: [
-        'Team Work',
-        'Strategia e Tattica',
-        'Disciplina e Costanza',
-        'Leadership'
-      ]
+      description: t.pallavolo.description,
+      highlights: t.pallavolo.highlights
     }
   ];
 
@@ -54,7 +43,7 @@ const Passions = () => {
           viewport={{ once: true }}
           style={{ color: theme.primary }}
         >
-          Le Mie Passioni
+          {t.title}
         </motion.h2>
 
         <motion.p
@@ -64,7 +53,7 @@ const Passions = () => {
           viewport={{ once: true }}
           style={{ color: theme.text }}
         >
-          Clicca su una passione per cambiare il tema del portfolio
+          {t.subtitle}
         </motion.p>
 
         <div className="passions-grid">

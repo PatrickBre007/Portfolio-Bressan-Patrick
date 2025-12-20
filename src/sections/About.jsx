@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 import './About.css';
 
 const About = () => {
   const { theme } = useTheme();
+  const { currentLanguage } = useLanguage();
+  const t = translations[currentLanguage].about;
 
   const skills = [
     { name: 'C#', level: 80 },
@@ -25,7 +29,7 @@ const About = () => {
           viewport={{ once: true }}
           style={{ color: theme.primary }}
         >
-          Chi Sono
+          {t.title}
         </motion.h2>
 
         <div className="about-content">
@@ -37,18 +41,14 @@ const About = () => {
             transition={{ delay: 0.2 }}
           >
             <p style={{ color: theme.text }}>
-              Sono <strong style={{ color: theme.primary }}>Patrick Bressan</strong>, 
-              un Full Stack Developer appassionato di tecnologia e innovazione. 
-              Mi piace creare soluzioni digitali moderne, funzionali e con un'ottima user experience.
+              {t.intro} <strong style={{ color: theme.primary }}>Patrick Bressan</strong>, 
+              {t.description1}
             </p>
             <p style={{ color: theme.textSecondary }}>
-              La mia esperienza spazia dallo sviluppo frontend con React e Angular date alle mie vecchie esperienze lavorative, 
-              al backend con C# e database SQL. Sono sempre alla ricerca di nuove sfide 
-              e opportunità per crescere professionalmente.
+              {t.description2}
             </p>
             <p style={{ color: theme.textSecondary }}>
-              Oltre alla programmazione, sono appassionato di videogiochi e pallavolo, 
-              passioni che mi insegnano il valore del teamwork, della strategia e della perseveranza.
+              {t.description3}
             </p>
           </motion.div>
 
@@ -59,7 +59,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <h3 style={{ color: theme.primary }}>Competenze Tecniche</h3>
+            <h3 style={{ color: theme.primary }}>{t.skillsTitle}</h3>
             <div className="skills-list">
               {skills.map((skill, index) => (
                 <motion.div
