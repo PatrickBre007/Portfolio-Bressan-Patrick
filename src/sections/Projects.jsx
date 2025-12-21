@@ -17,7 +17,7 @@ const Projects = () => {
       description: t.project1.description,
       technologies: ['React', 'Vite', 'Three.js',],
       github: 'https://github.com/PatrickBre007/IV3OSC',
-      demo: 'https://iv3osc.vercel.app/',
+      demo: 'https://iv3osc.com/',
       image: '📡'
     },
     {
