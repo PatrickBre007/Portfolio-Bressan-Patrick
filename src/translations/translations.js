@@ -85,7 +85,7 @@ export const translations = {
     // Contact
     contact: {
       title: 'Contattami',
-      subtitle: 'Interessato a collaborare? Sono sempre aperto a nuove opportunità! (+4 anni di esperienza)',
+      subtitle: 'Interessato a collaborare? Sono sempre aperto a nuove opportunità!',
       email: 'Email',
       phone: 'Telefono',
       formTitle: 'Inviami un Messaggio',
