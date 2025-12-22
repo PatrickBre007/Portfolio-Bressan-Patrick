@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import AnimatedLogo from './AnimatedLogo';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
@@ -42,9 +43,10 @@ const Navbar = () => {
         <motion.div
           className="navbar-logo"
           whileHover={{ scale: 1.05 }}
-          style={{ color: theme.primary }}
+          style={{ color: theme.primary, display: 'flex', alignItems: 'center', gap: '0.7rem' }}
         >
-          Patrick Bressan
+          <AnimatedLogo size={70} glow={scrolled} />
+          <span style={{ fontWeight: 'bold', fontSize: '1.3rem', letterSpacing: '1px' }}>Patrick Bressan</span>
         </motion.div>
 
         <div className="navbar-menu">

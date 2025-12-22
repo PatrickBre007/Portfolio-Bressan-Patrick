@@ -1,7 +1,8 @@
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
+import LoadingScreen from './components/LoadingScreen';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import ImageCarousel from './components/ImageCarousel';
@@ -14,26 +15,29 @@ import './App.css';
 
 function AppContent() {
   const { currentTheme } = useTheme();
+  const [loading, setLoading] = useState(true);
 
-  // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Simula caricamento (puoi sostituire con caricamento reale dati)
+    const timer = setTimeout(() => setLoading(false), 1800);
+    return () => clearTimeout(timer);
   }, []);
 
-  // Cambia l'icona del sito in base al tema
   useEffect(() => {
     const themeIcons = {
       coding: '💻',
       videogame: '🎮',
       pallavolo: '🏐'
     };
-    
     const emoji = themeIcons[currentTheme] || '💻';
     const link = document.querySelector("link[rel*='icon']");
     if (link) {
       link.href = `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emoji}</text></svg>`;
     }
   }, [currentTheme]);
+
+  if (loading) return <LoadingScreen />;
 
   return (
     <div className="App">
