@@ -149,7 +149,7 @@ const Contact = () => {
                   className="stat-number"
                   style={{ color: theme.primary }}
                 >
-                  2+
+                  4+
                 </span>
                 <span
                   className="stat-label"
@@ -163,7 +163,7 @@ const Contact = () => {
                   className="stat-number"
                   style={{ color: theme.primary }}
                 >
-                    7+
+                    10+
                 </span>
                 <span
                   className="stat-label"

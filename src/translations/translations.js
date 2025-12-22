@@ -20,7 +20,7 @@ export const translations = {
       title: 'Chi Sono',
       intro: 'Sono',
       description1: 'un Full Stack Developer appassionato di tecnologia e innovazione. Mi piace creare soluzioni digitali moderne, funzionali e con un\'ottima user experience.',
-      description2: 'La mia esperienza spazia dallo sviluppo frontend con React e Angular dalle mie vecchie esperienze lavorative, al backend con C# e database SQL. Sono sempre alla ricerca di nuove sfide e opportunità per crescere professionalmente.',
+      description2: 'Ho 4 anni di esperienza nello sviluppo software. La mia esperienza spazia dallo sviluppo frontend con React e Angular dalle mie vecchie esperienze lavorative, al backend con C# e database SQL. Sono sempre alla ricerca di nuove sfide e opportunità per crescere professionalmente.',
       description3: 'Oltre alla programmazione, sono appassionato di videogiochi e pallavolo, passioni che mi hanno insegnato il valore del lavoro di squadra e della determinazione.',
       skillsTitle: 'Le Mie Competenze',
     },
@@ -85,7 +85,7 @@ export const translations = {
     // Contact
     contact: {
       title: 'Contattami',
-      subtitle: 'Interessato a collaborare? Sono sempre aperto a nuove opportunità!',
+      subtitle: 'Interessato a collaborare? Sono sempre aperto a nuove opportunità! (+4 anni di esperienza)',
       email: 'Email',
       phone: 'Telefono',
       formTitle: 'Inviami un Messaggio',
