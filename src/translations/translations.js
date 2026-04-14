@@ -132,7 +132,7 @@ export const translations = {
         description: 'Interactive portfolio with Vite, React and dynamic themes. Presents projects, skills and passions in an engaging way.',
       },
       project2: {
-        title: 'Natural Jewelry Store',
+        title: 'Accreation',
         description: 'E-commerce for handmade jewelry with natural stones, interactive catalog and order management system.',
       },
       project3: {
@@ -229,7 +229,7 @@ export const translations = {
         description: 'Portfolio interactif avec Vite, React et thèmes dynamiques. Présente projets, compétences et passions de manière engageante.',
       },
       project2: {
-        title: 'Natural Jewelry Store',
+        title: 'Accreation',
         description: 'E-commerce de bijoux faits à main avec pierres naturelles, catalogue interactif et système de commandes.',
       },
       project3: {
