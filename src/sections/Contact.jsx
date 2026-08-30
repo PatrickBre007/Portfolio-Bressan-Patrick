@@ -39,8 +39,8 @@ const Contact = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/cv/CV PATRICK BRESSAN.pdf';
-    link.download = 'CV_Patrick_Bressan.pdf';
+    link.href = '/cv/cv-bressan-patrick-dev.pdf';
+    link.download = 'cv-bressan-patrick-dev.pdf';
     link.click();
   };
 
